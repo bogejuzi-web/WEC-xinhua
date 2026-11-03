@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>新华 D01 · 版本文档与原型</title>
+    <script defer src="./shell/assets/index-BIFNru7l.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./prototype-data.js"></script>
+    <script>
+      // Removed page links fall back to the first available page.
+      const query = new URLSearchParams(location.search);
+      if (query.has('page') && !window.PROTOTYPE.data.pages.some(page => page.id === query.get('page'))) {
+        query.delete('page');
+        history.replaceState(null, '', location.pathname + (query.size ? '?' + query : '') + location.hash);
+      }
+    </script>
+
+  </body>
+</html>

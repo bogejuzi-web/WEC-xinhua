@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新华版本文档</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;color:#24323e;background:#f4f6f8;font:14px/1.8 "Microsoft YaHei",system-ui,sans-serif}header{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 24px;background:#fff;border-bottom:1px solid #dde5e9}header strong{font-size:16px}button,a{color:#0f766e}button{font:inherit;background:#fff;border:1px solid #b8d6d2;border-radius:6px;padding:4px 12px;cursor:pointer}.status{font-size:12px;color:#657383;flex:1}article{max-width:1120px;margin:20px auto;padding:28px 36px;background:#fff;border:1px solid #e0e6eb;border-radius:8px;overflow-wrap:anywhere}h1,h2,h3,h4,h5,h6{scroll-margin-top:90px}h1{font-size:26px;line-height:1.5}h2{margin-top:32px;font-size:21px;border-bottom:1px solid #e6ecef;padding-bottom:8px}h3{font-size:17px}blockquote{margin:16px 0;padding:10px 16px;border-left:4px solid #b8d6d2;background:#f5f9f9;color:#566673}pre{overflow:auto;padding:16px;background:#f5f7f9;border-radius:6px;line-height:1.6}code{font-family:Consolas,monospace;font-size:13px}p code,li code,td code{background:#f0f3f5;padding:2px 4px;border-radius:3px}.table-scroll{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;width:100%;font-size:13px}td,th{border:1px solid #dce4e8;padding:9px 12px;text-align:left;vertical-align:top;min-width:90px}th{background:#edf5f3}tr:nth-child(even){background:#fafcfc}.mermaid{overflow-x:auto;text-align:center}.mermaid svg{max-width:none!important;height:auto}img{max-width:100%}.error{color:#a33228}.source-note{font-size:12px;color:#657383}@media(max-width:700px){article{margin:8px;padding:16px}header{padding:10px 16px}h1{font-size:22px}}
+    .reference-notice{color:#d32029;font-size:24px;font-weight:700;line-height:1.6;margin:0 0 20px}
+  </style>
+  <script defer src="./vendor/marked.umd.js"></script>
+  <script defer src="./vendor/purify.min.js"></script>
+  <script defer src="./vendor/mermaid.min.js"></script>
+  <script defer src="./document-viewer.js"></script>
+</head>
+<body>
+  <header><strong id="title">版本文档</strong><span class="status" id="status" role="status">读取源文档…</span><button id="refresh" type="button">刷新文档</button><a id="source" target="_blank" rel="noopener">查看源文件</a></header>
+  <article id="content" aria-busy="true"></article>
+</body>
+</html>

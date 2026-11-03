@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>编辑会员 · 项目会员权益ID</title><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./member-project-ids.css"><script defer src="./member-project-ids.js"></script>
+</head>
+<body>
+<main class="screen" id="screen">
+  <div class="background" aria-hidden="true">
+    <div class="topbar"></div><div class="sidebar" id="sidebar"></div>
+    <div class="tabs"><span class="tab-back">〈</span><span class="tab-todo">待办事项</span><span class="tab-service">服务管理 ×</span><span class="tab-ticket">绿通工单 ×</span><span class="tab-edit">新增/编辑绿通工单 ×</span><span class="tab-company">企业管理 ×</span><span class="tab-project">项目管理 ×</span><span class="tab-member">会员管理 ×</span></div>
+    <div class="background-page"><div class="filter">参与项目：　　<span>请选择项目</span></div><div class="tools"><span>＋ 新增</span><small>⟳　↧　⚙</small></div><div class="background-table" id="background-table"></div><div class="pagination">1　 2　 3　 4　 5　 …　 129　 〉　10 条/页⌄</div></div>
+    <div class="shade"></div>
+  </div>
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="member-title">
+    <header><h1 id="member-title">编辑会员</h1><button type="button" class="close-icon" aria-label="关闭会员编辑">×</button></header>
+    <div class="dialog-content" id="dialog-content">
+      <h2 class="section-title">会员基本信息</h2>
+      <section class="base-card card">
+        <div class="base-grid">
+          <div class="form-item"><label class="required" for="member-name">姓名：</label><div class="input-control"><input id="member-name" value="演示会员甲"><button type="button" data-clear="member-name" aria-label="清空姓名">⊗</button></div></div>
+          <div class="form-item"><label class="required" for="member-phone">电话：</label><div class="input-control"><input id="member-phone" value="演示电话"><button type="button" data-clear="member-phone" aria-label="清空电话">⊗</button></div></div>
+          <div class="form-item"><label for="id-type">证件类型：</label><div class="input-control"><select id="id-type"><option>身份证</option><option>护照</option><option>其他</option></select><span class="chevron"></span></div></div>
+          <div class="form-item"><label for="id-number">证件号码：</label><div class="input-control"><input id="id-number" value="DEMO-ID-001"><button type="button" data-clear="id-number" aria-label="清空证件号码">⊗</button></div></div>
+          <div class="form-item"><span class="field-label" id="gender-label">性别：</span><div class="radios" role="group" aria-labelledby="gender-label"><label><input type="radio" name="gender" value="male">男</label><label><input type="radio" name="gender" value="female">女</label><label><input type="radio" name="gender" value="unknown">未知</label></div></div>
+          <div class="form-item"><label for="region">所在省市：</label><div class="input-control"><select id="region"><option value="">请选择所在省市</option><option>北京市</option><option>上海市</option><option>广东省 / 广州市</option></select><span class="chevron"></span></div></div>
+          <div class="form-item remark-item"><label for="remark">备注：</label><div class="remark-control"><textarea id="remark" maxlength="500" placeholder="请输入备注"></textarea><span id="remark-count">0 / 500</span></div></div>
+        </div>
+        <section class="entitlement-group" id="entitlement-group" data-change-id="P03-C01" aria-labelledby="entitlement-title">
+          <div class="entitlement-heading"><h3 id="entitlement-title">会员权益ID</h3><span>用于标记会员在对应项目中的唯一ID标识</span></div>
+          <div class="table-wrap"><table class="id-table"><thead><tr><th scope="col">所属项目</th><th scope="col">会员权益ID</th></tr></thead><tbody id="id-rows"></tbody></table></div>
+          <p class="id-empty" id="id-empty" hidden>暂无会员权益ID记录</p>
+          <p class="group-note">按项目展示接口同步的会员权益ID，仅供查看。</p>
+        </section>
+      </section>
+      <div class="wechat-line"><h2 class="section-title">微信用户信息</h2><span class="bound">已绑定微信</span><span class="green-arrow">›</span></div>
+      <div class="benefit-heading"><h2 class="section-title">服务权益</h2><button type="button" class="outline-button existing-button">退服记录</button></div>
+      <section class="service-card card"><span>共 0 个项目</span></section>
+      <div class="project-heading"><h2 class="section-title">选择备案项目</h2><button type="button" class="primary small existing-button">＋ 添加项目</button></div>
+      <section class="project-card card"><div class="empty-state"><svg width="64" height="48" viewBox="0 0 64 48" aria-hidden="true"><ellipse cx="32" cy="41" rx="30" ry="6" fill="#f5f5f5"/><path d="M10 22 21 9h22l11 13v18H10Z" fill="#fafafa" stroke="#d9d9d9"/><path d="M10 22h12l3 5h14l3-5h12" fill="white" stroke="#d9d9d9"/></svg><p>暂无数据</p><button type="button" class="choose-project existing-button">选择项目</button></div></section>
+    </div>
+    <footer><span class="feedback" id="feedback" role="status"></span><button type="button" id="cancel">取 消</button><button type="button" class="primary" id="save">保 存</button></footer>
+  </section>
+  <button type="button" id="reopen" class="primary reopen" hidden>编辑会员</button>
+</main>
+</body>
+</html>

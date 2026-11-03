@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>编辑项目信息 · 备案字段</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./project-registration.css">
+  <script defer src="./project-registration.js"></script>
+</head>
+<body>
+  <main class="screen" id="screen">
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <header><h1 id="dialog-title">编辑项目信息</h1><button class="close-icon" aria-label="关闭编辑项目">×</button></header>
+      <ol class="steps" aria-label="项目配置步骤"><li class="current"><span>1</span>基本信息</li><li><span>2</span>产品配置</li><li><span>3</span>前端配置</li></ol>
+      <form id="project-form">
+        <div class="form-row"><label for="project-name" class="required">项目名称：</label><div class="control clearable"><input id="project-name" value="健康增值服务"><button type="button" aria-label="清空项目名称" data-clear="project-name">⊗</button></div></div>
+        <div class="form-row"><label for="enterprise" class="required">所属企业：</label><div class="control enterprise"><select id="enterprise"><option>北京邻里互动健康管理有限公司</option></select><span class="chevron"></span></div></div>
+        <div class="form-row"><label class="required" for="date-start">项目时间：</label><div class="control date-range"><input id="date-start" aria-label="项目开始日期" value="2026-06-12"><span class="date-arrow">→</span><input aria-label="项目结束日期" value="2028-06-11"><span class="calendar">▦</span></div></div>
+        <div class="form-row"><label for="external-code">外部项目编码 <span class="question" title="对接方系统为项目分配的唯一业务编码">?</span>：</label><div class="control"><input id="external-code" placeholder="请输入外部项目编码"></div></div>
+        <div class="form-row"><span class="field-label required" id="number-label">服务号码类型：</span><div class="radio-group" role="group" aria-labelledby="number-label"><label><input type="radio" name="number" value="none" checked>无</label><label><input type="radio" name="number" value="general">通用号码</label><label><input type="radio" name="number" value="dedicated">服务小号</label></div></div>
+        <div class="form-row"><span class="field-label required" id="auth-label">鉴权方式：</span><div class="radio-group" role="group" aria-labelledby="auth-label"><label><input type="radio" name="auth" value="none">无</label><label><input type="radio" name="auth" value="member" checked>会员备案</label><label><input type="radio" name="auth" value="dedicated">服务小号</label></div></div>
+        <div class="form-row"><span class="field-label required" id="mode-label">会员备案方式：</span><div class="radio-group" role="group" aria-labelledby="mode-label"><label><input type="radio" name="mode" value="none">无</label><label><input type="radio" name="mode" value="excel" checked>EXCEL导入</label><label><input type="radio" name="mode" value="api">接口备案</label><label><input type="radio" name="mode" value="query">三方调取查询</label></div></div>
+        <div class="form-row registration-row" data-change-id="P02-C01">
+          <label id="fields-label" class="required">备案字段：</label>
+          <div class="field-picker" id="field-picker">
+            <div class="multi-select" id="field-combobox" role="combobox" aria-labelledby="fields-label" aria-controls="field-options" aria-expanded="true" aria-haspopup="listbox" tabindex="0"><div class="tags" id="selected-tags"></div><button type="button" class="clear-fields" aria-label="清空备案字段">⊗</button></div>
+            <div class="field-options" id="field-options" role="listbox" aria-labelledby="fields-label" aria-multiselectable="true"></div>
+          </div>
+        </div>
+        <div class="form-row"><span class="field-label" id="whitelist-label">是否开启白名单：</span><div class="radio-group" role="group" aria-labelledby="whitelist-label"><label><input type="radio" name="whitelist" value="no" checked>否</label><label><input type="radio" name="whitelist" value="yes">是</label></div></div>
+        <div class="form-row"><span class="field-label required" id="anonymous-label">是否埋名服务：</span><div class="radio-group" role="group" aria-labelledby="anonymous-label"><label><input type="radio" name="anonymous" value="no" checked>否</label><label><input type="radio" name="anonymous" value="yes">是</label></div></div>
+        <div class="form-row"><span class="field-label" id="family-label">是否开启家庭：</span><div class="radio-group" role="group" aria-labelledby="family-label"><label><input type="radio" name="family" value="no" checked>否</label><label><input type="radio" name="family" value="yes">是</label></div></div>
+        <div class="form-row"><label for="service-entity">对外服务主体：</label><div class="control"><input id="service-entity" placeholder="请输入对外服务主体"></div></div>
+        <div class="form-row welcome-row"><label for="welcome">项目欢迎语：</label><div class="welcome-control"><textarea id="welcome" placeholder="请输入项目欢迎语"></textarea><button type="button" class="add-welcome">添加+</button></div></div>
+      </form>
+      <footer><span id="feedback" role="status"></span><button type="button" class="close-button">关 闭</button><button type="button" class="primary next-button">下一步</button></footer>
+    </section>
+    <button class="reopen primary" id="reopen" hidden>编辑项目信息</button>
+  </main>
+</body>
+</html>

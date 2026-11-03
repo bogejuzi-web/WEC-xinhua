@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>绿通工单 · 取消方</title><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./ticket-cancellation.css"><script defer src="./ticket-cancellation.js"></script>
+</head>
+<body>
+  <main id="screen" class="screen" aria-label="绿通工单列表">
+    <div class="table-cover" aria-hidden="true"></div>
+    <table class="ticket-table" aria-label="已取消绿通工单">
+      <colgroup><col style="width:48px"><col style="width:240px"><col style="width:110px"><col style="width:110px"><col style="width:170px"><col style="width:172px"><col style="width:200px"><col style="width:100px"><col style="width:150px"><col style="width:120px"><col style="width:166px"><col style="width:134px"><col style="width:150px"><col style="width:177px"></colgroup>
+      <thead><tr><th><input id="select-all" type="checkbox" aria-label="选择全部工单"></th><th>工单ID</th><th>会员姓名</th><th>会员电话</th><th>创建时间</th><th>绿通服务内容</th><th>项目</th><th>供应商</th><th>最近跟进时间</th><th>工单状态</th><th id="cancel-header" data-change-id="P04-C01">取消方</th><th>创建人</th><th>负责人</th><th class="actions-heading">操作</th></tr></thead>
+      <tbody><tr><td><input id="select-row" type="checkbox" aria-label="选择当前工单"></td><td id="order-id"></td><td></td><td></td><td>2026-11-03 11:40:38</td><td>门诊预约</td><td id="project-name"></td><td></td><td></td><td><span class="cancelled">已取消</span></td><td id="cancel-party" data-change-id="P04-C01"></td><td>系统管理员</td><td>系统管理员</td><td class="actions"><button type="button">编辑</button><span></span><button type="button" class="delete">删除</button></td></tr></tbody>
+    </table>
+    <p id="feedback" role="status" hidden></p>
+  </main>
+</body>
+</html>
